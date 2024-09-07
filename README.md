@@ -1,4 +1,4 @@
-# 3d-portfolio
+# 3d Portfolio Andi Ahmad Z
 
 Personal Portfolio website Andi Ahmad Z using ThreeJS
 
@@ -14,4 +14,6 @@ Start the development server
 npm run dev
 ```
 
-Preview: 
+Preview: portfolio2-andy.vercel.app
+
+Original code : https://github.com/sushilthapa98/3d-portfolio
