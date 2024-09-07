@@ -25,23 +25,30 @@ let clipNames = [
   'fan_rotation.002',
   'fan_rotation.003',
   'fan_rotation.004',
+
 ];
 let projects = [
   {
-    image: 'textures/project-spaze.webp',
-    url: 'https://www.spaze.social/',
+    image: 'textures/project 1.jpeg',
+    url: 'https://andiahmadz.itch.io/cilok-adventure',
+    text: 'Ini adalah proyek Human vs Ghost'
+    
   },
   {
-    image: 'textures/project-myteachers.jpg',
-    url: 'https://myteachers.com.au/',
+    image: 'textures/project 2.jpeg',
+    url: 'https://tommywaltion.itch.io/human-vs-ghost',
   },
   {
-    image: 'textures/project-wholesale.jpg',
-    url: 'https://wholesale.com.np/',
+    image: 'textures/project 3.jpeg',
+    url: 'https://laksanajayakusen.vercel.app',
   },
   {
-    image: 'textures/project-pelotero.jpg',
-    url: 'https://www.peloterosenlaweb.com/',
+    image: 'textures/project 4.jpeg',
+    url: 'https://andiazportfolio.vercel.app',
+  },
+  {
+    image: 'textures/project 5.jpeg',
+    url: 'https://jsrrempah.wearewebdev.com/home/',
   },
 ];
 let aboutCameraPos = {
@@ -64,7 +71,11 @@ let projectsCameraRot = {
   y: 0.05,
   z: 0,
 };
-
+let projectshhPos = {
+  x: -1.20,
+  y: 0.02,
+  z: 0,
+};
 // SCENE & CAMERA
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
@@ -125,7 +136,7 @@ gltfLoader.load(
 
     // load video
     const video = document.createElement('video');
-    video.src = 'textures/arcane.mp4';
+    video.src = 'textures/andy.mp4';
     video.muted = true;
     video.playsInline = true;
     video.autoplay = true;
@@ -187,7 +198,7 @@ gltfLoader.load(
 
         // adding texture to book
         const bookTexture = new THREE.TextureLoader().load(
-          'textures/book-inner.jpg'
+          'textures/book-andy2.png'
         );
         bookTexture.flipY = false;
         child.material = new THREE.MeshStandardMaterial({
@@ -317,7 +328,7 @@ function loadIntroText() {
       new THREE.MeshPhongMaterial({ color: 0x171f27, flatShading: true }),
       new THREE.MeshPhongMaterial({ color: 0xffffff }),
     ];
-    const titleGeo = new TextGeometry('SUSHIL THAPA', {
+    const titleGeo = new TextGeometry('Andi Ahmad Z', {
       font: font,
       size: 0.08,
       height: 0.01,
@@ -334,7 +345,7 @@ function loadIntroText() {
       new THREE.MeshPhongMaterial({ color: 0xffffff }),
     ];
     const subTitleGeo = new TextGeometry(
-      'Web Designer / Developer / Content Creator',
+      'Front End Developer | UI/UX designer',
       {
         font: font,
         size: 0.018,
