@@ -14,6 +14,6 @@ Start the development server
 npm run dev
 ```
 
-Preview: portfolio2-andy.vercel.app
+Preview: https://portfolio2-andy.vercel.app
 
 Original code : https://github.com/sushilthapa98/3d-portfolio
