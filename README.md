@@ -1,6 +1,6 @@
 # 3d-portfolio
 
-Personal Portfolio website designed using ThreeJS
+Personal Portfolio website Andi Ahmad Z using ThreeJS
 
 Install Dependencies
 
@@ -14,4 +14,4 @@ Start the development server
 npm run dev
 ```
 
-Preview: https://chimerical-sawine-e5d69e.netlify.app/
+Preview: 

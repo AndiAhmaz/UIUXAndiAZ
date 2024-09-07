@@ -71,11 +71,7 @@ let projectsCameraRot = {
   y: 0.05,
   z: 0,
 };
-let projectshhPos = {
-  x: -1.20,
-  y: 0.02,
-  z: 0,
-};
+
 // SCENE & CAMERA
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
