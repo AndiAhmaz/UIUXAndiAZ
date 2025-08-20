@@ -50,6 +50,10 @@ let projects = [
     image: 'textures/project 5.jpeg',
     url: 'https://jsrrempah.wearewebdev.com/home/',
   },
+    {
+    image: 'textures/project 5.jpeg',
+    url: 'https://jsrrempah.wearewebdev.com/home/',
+  },
 ];
 let aboutCameraPos = {
   x: 0.12,
