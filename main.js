@@ -25,7 +25,7 @@ let clipNames = [
   'fan_rotation.002',
   'fan_rotation.003',
   'fan_rotation.004',
-  'fan_rotation.005',
+
 
 ];
 let projects = [
@@ -48,10 +48,6 @@ let projects = [
     url: 'https://andiazportfolio.vercel.app',
   },
   {
-    image: 'textures/project 5.jpeg',
-    url: 'https://jsrrempah.wearewebdev.com/home/',
-  },
-    {
     image: 'textures/project 5.jpeg',
     url: 'https://jsrrempah.wearewebdev.com/home/',
   },
