@@ -51,6 +51,18 @@ let projects = [
     image: 'textures/project 5.jpeg',
     url: 'https://jsrrempah.wearewebdev.com/home/',
   },
+    {
+    image: 'textures/project 3.jpeg',
+    url: 'https://laksanajayakusen.vercel.app',
+  },
+  {
+    image: 'textures/project 4.jpeg',
+    url: 'https://andiazportfolio.vercel.app',
+  },
+  {
+    image: 'textures/project 5.jpeg',
+    url: 'https://jsrrempah.wearewebdev.com/home/',
+  },
 ];
 let aboutCameraPos = {
   x: 0.12,
@@ -609,34 +621,38 @@ function aboutMenuListener() {
   });
 }
 
-function projectsMenuListener() {
-  // create project planes with textures
-  projects.forEach((project, i) => {
-    const colIndex = i % 3 === 0 ? 0 : 1;
-    const rowIndex = Math.floor(i / 3);
-    const geometry = new THREE.PlaneGeometry(0.71, 0.4);
-    const material = new THREE.MeshBasicMaterial({
-      color: 0xffffff,
-      map: new THREE.TextureLoader().load(project.image),
-      transparent: true,
-      opacity: 0.0,
-    });
-    const projectPlane = new THREE.Mesh(geometry, material);
-    projectPlane.name = 'project';
-    projectPlane.userData = {
-      url: project.url,
-    };
-    projectPlane.position.set(
-      0.3 + i * 0.8 * colIndex,
-      1 - rowIndex * 0.5,
-      -1.15
-    );
-    projectPlane.scale.set(0, 0, 0);
-    // mesh & y vars needed for animation
-    projects[i].mesh = projectPlane;
-    projects[i].y = 1 - rowIndex * 0.5;
-    scene.add(projectPlane);
+projects.forEach((project, i) => {
+  const colIndex = i % 3; // 0,1,2 (3 kolom)
+  const rowIndex = Math.floor(i / 3); // baris bertambah tiap 3 item
+
+  const geometry = new THREE.PlaneGeometry(0.71, 0.4);
+  const material = new THREE.MeshBasicMaterial({
+    color: 0xffffff,
+    map: new THREE.TextureLoader().load(project.image),
+    transparent: true,
+    opacity: 0.0,
   });
+  const projectPlane = new THREE.Mesh(geometry, material);
+  projectPlane.name = 'project';
+  projectPlane.userData = {
+    url: project.url,
+  };
+
+  // atur posisi biar 3 kolom × 3 baris
+  projectPlane.position.set(
+    0.3 + colIndex * 0.8, // x
+    1 - rowIndex * 0.5,   // y
+    -1.15                 // z
+  );
+
+  projectPlane.scale.set(0, 0, 0);
+
+  // simpan mesh & posisi awal
+  projects[i].mesh = projectPlane;
+  projects[i].y = 1 - rowIndex * 0.5;
+
+  scene.add(projectPlane);
+});
 
   document
     .getElementById('projects-menu')
