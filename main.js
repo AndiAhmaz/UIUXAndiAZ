@@ -25,6 +25,7 @@ let clipNames = [
   'fan_rotation.002',
   'fan_rotation.003',
   'fan_rotation.004',
+  'fan_rotation.005',
 
 ];
 let projects = [
