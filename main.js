@@ -621,38 +621,46 @@ function aboutMenuListener() {
   });
 }
 
-projects.forEach((project, i) => {
-  const colIndex = i % 3; // 0,1,2 (3 kolom)
-  const rowIndex = Math.floor(i / 3); // baris bertambah tiap 3 item
-
-  const geometry = new THREE.PlaneGeometry(0.71, 0.4);
-  const material = new THREE.MeshBasicMaterial({
-    color: 0xffffff,
-    map: new THREE.TextureLoader().load(project.image),
-    transparent: true,
-    opacity: 0.0,
+function projectsMenuListener() {
+  // hapus dulu mesh lama kalau ada
+  projects.forEach((p) => {
+    if (p.mesh) {
+      scene.remove(p.mesh);
+    }
   });
-  const projectPlane = new THREE.Mesh(geometry, material);
-  projectPlane.name = 'project';
-  projectPlane.userData = {
-    url: project.url,
-  };
 
-  // atur posisi biar 3 kolom × 3 baris
-  projectPlane.position.set(
-    0.3 + colIndex * 0.8, // x
-    1 - rowIndex * 0.5,   // y
-    -1.15                 // z
-  );
+  // create project planes with textures
+  projects.forEach((project, i) => {
+    const colIndex = i % 3; // 0,1,2
+    const rowIndex = Math.floor(i / 3);
 
-  projectPlane.scale.set(0, 0, 0);
+    const geometry = new THREE.PlaneGeometry(0.71, 0.4);
+    const material = new THREE.MeshBasicMaterial({
+      color: 0xffffff,
+      map: new THREE.TextureLoader().load(project.image),
+      transparent: true,
+      opacity: 0.0,
+    });
 
-  // simpan mesh & posisi awal
-  projects[i].mesh = projectPlane;
-  projects[i].y = 1 - rowIndex * 0.5;
+    const projectPlane = new THREE.Mesh(geometry, material);
+    projectPlane.name = 'project';
+    projectPlane.userData = { url: project.url };
 
-  scene.add(projectPlane);
-});
+    // grid posisi 3x3
+    projectPlane.position.set(
+      0.3 + colIndex * 0.8,
+      1 - rowIndex * 0.5,
+      -1.15
+    );
+
+    projectPlane.scale.set(0, 0, 0);
+
+    // simpan untuk animasi
+    projects[i].mesh = projectPlane;
+    projects[i].y = 1 - rowIndex * 0.5;
+
+    scene.add(projectPlane);
+  });
 
   document
     .getElementById('projects-menu')
@@ -660,14 +668,9 @@ projects.forEach((project, i) => {
       e.preventDefault();
       disableOrbitControls();
       resetBookCover();
-      gsap.to(camera.position, {
-        ...projectsCameraPos,
-        duration: 1.5,
-      });
-      gsap.to(camera.rotation, {
-        ...projectsCameraRot,
-        duration: 1.5,
-      });
+
+      gsap.to(camera.position, { ...projectsCameraPos, duration: 1.5 });
+      gsap.to(camera.rotation, { ...projectsCameraRot, duration: 1.5 });
       gsap.delayedCall(1.5, enableCloseBtn);
 
       // animate & show project items
@@ -685,6 +688,7 @@ projects.forEach((project, i) => {
         });
       });
     });
+
 }
 
 function init3DWorldClickListeners() {
