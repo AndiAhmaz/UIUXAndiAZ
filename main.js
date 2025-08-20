@@ -48,20 +48,20 @@ let projects = [
     url: 'https://andiazportfolio.vercel.app',
   },
   {
-    image: 'textures/project 5.jpeg',
-    url: 'https://jsrrempah.wearewebdev.com/home/',
+    image: 'textures/project 5.png',
+    url: 'https://ranah-interactive.itch.io/pletokan-arcade',
   },
     {
-    image: 'textures/project 3.jpeg',
-    url: 'https://laksanajayakusen.vercel.app',
+    image: 'textures/project 6.jpeg',
+    url: 'https://codingrebahan.vercel.app',
   },
   {
-    image: 'textures/project 4.jpeg',
-    url: 'https://andiazportfolio.vercel.app',
+    image: 'textures/project 7.jpeg',
+    url: 'https://jai-indonesia.com',
   },
   {
-    image: 'textures/project 5.jpeg',
-    url: 'https://jsrrempah.wearewebdev.com/home/',
+    image: 'textures/project 8.jpeg',
+    url: 'https://editoraesthetic.com',
   },
 ];
 let aboutCameraPos = {
