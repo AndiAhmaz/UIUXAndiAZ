@@ -30,6 +30,14 @@ let clipNames = [
 ];
 let projects = [
   {
+    image: 'textures/project 7.jpeg',
+    url: 'https://jai-indonesia.com',
+  },
+  {
+    image: 'textures/project 8.jpeg',
+    url: 'https://editoraesthetic.com',
+  },
+  {
     image: 'textures/project 1.jpeg',
     url: 'https://andiahmadz.itch.io/cilok-adventure',
     text: 'Ini adalah proyek Human vs Ghost'
@@ -54,14 +62,6 @@ let projects = [
     {
     image: 'textures/project 6.jpeg',
     url: 'https://codingrebahan.vercel.app',
-  },
-  {
-    image: 'textures/project 7.jpeg',
-    url: 'https://jai-indonesia.com',
-  },
-  {
-    image: 'textures/project 8.jpeg',
-    url: 'https://editoraesthetic.com',
   },
 ];
 let aboutCameraPos = {
