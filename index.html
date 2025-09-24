@@ -265,21 +265,7 @@
           </li>
         </ul>
       </nav>
-      <a href="#" class="play-music-link" onclick="toggleMusic(); return false;" id="musicControl">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M12 3v10.55a4 4 0 1 0 1.5 3.95V7h4V3h-5.5z"
-            id="musicIcon"
-          />
-        </svg>
-    </a>
-    
-    <audio id="musicPlayer" src="/audio/naruto.mp3"></audio>
+
     <!-- Tambahan tombol CV & Portfolio -->
 <div class="extra-buttons">
   <a href="https://drive.google.com/your-cv-link" target="_blank" class="extra-btn cv-btn">
@@ -343,48 +329,7 @@
   }
 </style>
 
-    <script>
-      var isPlaying = false;
-    
-      function toggleMusic() {
-        var audio = document.getElementById('musicPlayer');
-        var musicIcon = document.getElementById('musicIcon');
-    
-        if (isPlaying) {
-          audio.pause();
-          // Change icon to play icon
-          musicIcon.setAttribute("d", "M12 3v10.55a4 4 0 1 0 1.5 3.95V7h4V3h-5.5z");
-        } else {
-          audio.play();
-          // Change icon to pause icon
-          musicIcon.setAttribute("d", "M6 19h4V5H6v14zm8-14v14h4V5h-4z");
-        }
-        isPlaying = !isPlaying;
-      }
-    </script>
-    
-    <style>
-      #musicControl {
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        background-color: #f1f1f1;
-        padding: 10px;
-        border-radius: 50%;
-        text-decoration: none;
-        color: #333;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      }
-    
-      #musicControl:hover {
-        background-color: #e1e1e1;
-      }
-    
-      svg {
-        vertical-align: middle;
-      }
-    </style>
-    
+
     </header>
     <main>
       <a href="#" id="close-btn" style="display: none">
