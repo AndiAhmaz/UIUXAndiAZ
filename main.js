@@ -37,6 +37,10 @@ let projects = [
     image: 'textures/project 8.jpeg',
     url: 'https://editoraesthetic.com',
   },
+    {
+    image: 'textures/project 9.jpeg',
+    url: 'https://radarteknologikomputer.id',
+  },
   {
     image: 'textures/project 1.jpeg',
     url: 'https://andiahmadz.itch.io/cilok-adventure',
