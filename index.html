@@ -265,19 +265,27 @@
           </li>
         </ul>
       </nav>
-      <a href="#" class="circle-btn" onclick="toggleMusic(); return false;" id="musicControl">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-      <path d="M12 3v10.55a4 4 0 1 0 1.5 3.95V7h4V3h-5.5z" id="musicIcon"/>
-    </svg>
-  </a>
-
-  <!-- Tombol CV -->
+      <a href="#" class="play-music-link" onclick="toggleMusic(); return false;" id="musicControl">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 3v10.55a4 4 0 1 0 1.5 3.95V7h4V3h-5.5z"
+            id="musicIcon"
+          />
+        </svg>
+    </a>
+    
+    <audio id="musicPlayer" src="/audio/naruto.mp3"></audio>
+    <!-- Tambahan tombol CV & Portfolio -->
+<div class="extra-buttons">
   <a href="https://drive.google.com/your-cv-link" target="_blank" class="extra-btn cv-btn">
     <i class="fas fa-file-alt"></i>
     <span>CV</span>
   </a>
-
-  <!-- Tombol Portfolio -->
   <a href="https://drive.google.com/your-portfolio-link" target="_blank" class="extra-btn portfolio-btn">
     <i class="fas fa-briefcase"></i>
     <span>Portfolio</span>
@@ -285,47 +293,26 @@
 </div>
 
 <style>
-  .left-buttons {
+  .extra-buttons {
     position: fixed;
     bottom: 20px;
-    left: 20px;
+    left: 80px; /* agar sejajar dengan musik */
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    z-index: 1000;
+    gap: 10px;
+    z-index: 999;
   }
 
-  /* Tombol musik tetap bulat */
-  .circle-btn {
-    background: #f1f1f1;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: #333;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
-  }
-
-  .circle-btn:hover {
-    background: #e1e1e1;
-    transform: scale(1.05);
-  }
-
-  /* Tombol CV & Portfolio */
   .extra-btn {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 12px 16px;
-    border-radius: 12px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
     color: #fff;
+    padding: 10px 14px;
+    border-radius: 12px;
     font-size: 14px;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
     text-decoration: none;
     box-shadow: 0 4px 8px rgba(0,0,0,0.25);
     transition: all 0.3s ease;
@@ -334,18 +321,25 @@
   .extra-btn:hover {
     transform: translateY(-4px) scale(1.05);
     box-shadow: 0 6px 14px rgba(0,0,0,0.35);
-  }
-
-  .cv-btn {
-    background: linear-gradient(135deg, #ff9966, #ff5e62);
-  }
-
-  .portfolio-btn {
-    background: linear-gradient(135deg, #36d1dc, #5b86e5);
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
   }
 
   .extra-btn i {
     font-size: 16px;
+  }
+
+  /* Tambahan sentuhan aesthetic glow */
+  .extra-btn.cv-btn {
+    background: linear-gradient(135deg, #ff9966, #ff5e62);
+  }
+
+  .extra-btn.portfolio-btn {
+    background: linear-gradient(135deg, #36d1dc, #5b86e5);
+  }
+
+  .extra-btn span {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
   }
 </style>
 
