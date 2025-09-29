@@ -372,7 +372,7 @@ function loadIntroText() {
       new THREE.MeshPhongMaterial({ color: 0xffffff }),
     ];
     const subTitleGeo = new TextGeometry(
-      'Front End Developer | UI/UX designer',
+      'Graphic Designer | UI/UX designer',
       {
         font: font,
         size: 0.018,
