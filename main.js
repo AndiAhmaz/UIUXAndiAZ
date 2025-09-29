@@ -26,7 +26,16 @@ let clipNames = [
   'fan_rotation.003',
   'fan_rotation.004',
 
+let scrollOffset = 0;
 
+window.addEventListener("wheel", (e) => {
+  scrollOffset += e.deltaY * 0.001; // kecepatan scroll
+  projects.forEach((project, i) => {
+    if (project.mesh) {
+      project.mesh.position.y = project.y + scrollOffset;
+    }
+  });
+});
 ];
 let projects = [
   {
