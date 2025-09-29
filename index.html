@@ -346,6 +346,8 @@
     <footer>
   © <span id="year"></span> Andy Dev | All Rights Reserved.
 </footer>
-    <script type="module" src="/main.js"></script>
+    <script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
   </body>
 </html>
