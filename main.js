@@ -836,3 +836,8 @@ window.addEventListener('resize', () => {
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
+
+<script>
+  // Mengambil elemen dengan id "tahun" dan mengisi teksnya dengan tahun saat ini
+  document.getElementById("tahun").textContent = new Date().getFullYear();
+</script>
